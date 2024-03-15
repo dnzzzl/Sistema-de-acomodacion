@@ -6,8 +6,8 @@ import Header from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "XXI Meeting - Booking - TodoIncluido",
-  description: "Booking accommodations for XXI Meeting, courtesy of TodoIncluido.",
+  title: "XXI Meeting - Booking",
+  description: "Booking accommodations for XXI Meeting, courtesy of Hotel Barcelo Bavaro Palace.",
 };
 
 export default function RootLayout({
