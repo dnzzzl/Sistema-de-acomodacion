@@ -36,13 +36,13 @@ const Header = () => {
                     <Link href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                     Home
                     </Link>
-                    <Link href="/about" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                    <Link href="/#" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                     About
                     </Link>
                     <Link href="/form" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                     Booking Form
                     </Link>
-                    <Link href="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                    <Link href="/#" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                     Contact
                     </Link>
                 </div>
@@ -71,13 +71,13 @@ const Header = () => {
             <Link href="/" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
               Home
             </Link>
-            <Link href="/about" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+            <Link href="/#" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
               About
             </Link>
             <Link href="/form" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
               Booking Form
             </Link>
-            <Link href="/contact" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+            <Link href="/#" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
               Contact
             </Link>
           </div>

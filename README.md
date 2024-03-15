@@ -16,11 +16,8 @@ Diseñar un sistema de reservas de calendario para un hotel o alojamiento que pe
     3. nombre/nombres de los asistentes si la habitación es doble
     4. dirección de correo electrónico
 6. La interfaz de usuario estará desarrollada en NextJS y alojada por sí misma en una plataforma como vercel.
-7. **Confirmación de reservas**: Nuestra principal preocupación es: una vez realizada la reserva con éxito, el sistema debe generar un registro con los datos de entrada, un correo electrónico de confirmación debe ser enviado tanto al cliente como a la gestión, una copia del registro debe ser enviada al cliente.
-    1. Firebase
-    2. AWS Lambda + Amazon Simple Email Service (SES)
-    3. Azure Functions + Azure Cosmos DB
-    4. Google Cloud Functions + Cloud Firestore
+7. **Confirmación de reservas**: Nuestra principal preocupación es: una vez realizada la reserva con éxito, el sistema debe generar un registro con los datos de entrada, un correo electrónico de confirmación debe ser enviado tanto al cliente como a la gestión, una copia del registro debe guardada en base de datos.
+    - Vercel Serverless Functions + vercel/postgres + resend
 8. **Gestión de disponibilidad**: La disponibilidad no es una preocupación ya que no esperamos que asistan más de 20 personas.
 
 ---
