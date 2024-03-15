@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
-import todo_incl_logo from "@/public/todo_incl.png"
 import Link from 'next/link';
 import { Globe, MenuIcon, PanelTopCloseIcon } from 'lucide-react'
 
@@ -27,7 +26,6 @@ const Header = () => {
               </button>
             </div>
             <div className="ml-4">
-              <Image src={todo_incl_logo} alt="Logo" width={125} height={125} />
             </div>
           </div>
           <div className="flex items-center">
