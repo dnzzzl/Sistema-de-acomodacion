@@ -88,14 +88,15 @@ const FormSection = () => {
       }, [submitted])
       
     const handleSubmit = form.handleSubmit(async data =>{
-      
+
       const formData = new FormData();
 
       // Append the existing form fields
       for (const [key, value] of Object.entries(data)) {
-        if (key === "date"){formData.append(key, JSON.stringify(value))}
+        if (key === "date"){
+          formData.append(key, JSON.stringify(value))}
         else{
-          formData.append(key, value);
+          formData.append(key, value.toString());
         }
       }
 
