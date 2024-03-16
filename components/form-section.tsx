@@ -1,11 +1,12 @@
 "use client"
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { Label } from "@/components/ui/label"
+import {Toaster} from "@/components/ui/sonner"
+import { toast } from "sonner"
 import { Input } from "@/components/ui/input"
 import {
     Form,
@@ -20,8 +21,9 @@ import { Button } from '@/components/ui/button'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { DatePickerWithRange } from './date-picker-with-range'
 import { addDays} from "date-fns"
-import { DateRange, SelectRangeEventHandler } from "react-day-picker"
 import {isDateInRange} from "../lib/utils"
+import { createReservation } from '@/lib/actions'
+
 
   const FormSchema = z.object({
     stay_type: z.enum(["single", "double"]),
@@ -59,6 +61,8 @@ import {isDateInRange} from "../lib/utils"
    });
 
 const FormSection = () => {
+   const [submitted, setSubmitted] = useState({sent:false, error:false, message:""});
+
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
@@ -72,8 +76,31 @@ const FormSection = () => {
           name2: "",
         }
       })
-    
-    const handleSubmit = form.handleSubmit(data => console.log(data)) // Add this line to handle form submission as needed
+      
+      useEffect(() => {
+        if (submitted.sent) {
+        submitted.error ? toast.error(submitted.message) : toast(submitted.message)
+        setTimeout(() => {
+          setSubmitted({sent:false, error:false, message:""});
+        }, 3000);
+        form.reset()
+      }
+      }, [submitted])
+      
+    const handleSubmit = form.handleSubmit(async data =>{
+      
+      const formData = new FormData();
+
+      // Append the existing form fields
+      for (const [key, value] of Object.entries(data)) {
+        if (key === "date"){formData.append(key, JSON.stringify(value))}
+        else{
+          formData.append(key, value);
+        }
+      }
+
+      setSubmitted(await createReservation(formData));
+    })
      
   return (
     <div>
@@ -164,6 +191,7 @@ const FormSection = () => {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
+      <Toaster/>
     </div>
   )
 }
