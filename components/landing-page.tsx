@@ -1,6 +1,6 @@
 import React from 'react'
 import { CalendarIcon} from 'lucide-react'
-import coplac_logo from "@/public/coplac_logo.jpg"
+import coplac_logo from "@/public/coplac_logo.png"
 import idb_logo from  "@/public/IDB.svg"
 import minprep_logo from  "@/public/minprep_logo.png"
 import minhac_logo from "@/public/minhac_logo.png"
