@@ -1,0 +1,41 @@
+{
+    "Index": {
+      "title": "XXI Meeting of the Results-Based Budgeting Network for Latin America and the Caribbean",
+      "paragraph":"Following the closure of the United Nations Climate Change Conference - COP 28, in December 2023 in Dubai, and in line with the agreements reached during the XX Meeting of the Results-Based Budgeting Network for Latin America and the Caribbean in May 2023 in Panama City, this twenty-first meeting of the Network aims to strengthen the exchange of experiences regarding strategies and specific challenges related to the governance and governmental management involved in implementing green budgeting. This serves as a tool to assess and drive improvements in aligning national expenditure and revenue processes with climate goals and other environmental objectives.",
+      "form_title":"Book Your Stay",
+      "date":"April 10th - April 12th"
+    },
+    "FormSection": {
+        "stay_type_label":"Stay Type",
+        "room_type_single":"Single Bed Room",
+        "room_type_double":"Double Bed Room",
+        "calendar_heading":"Date",
+        "calendar_description":"Select a minimum of 3 days including at least one day between April 10th to April 13th 2024, feel free to extend your stay.",
+        "name_label":"Name",
+        "name2_label":"Second Persons Name",
+        "submit_label":"Submit"
+    },
+
+    "ScheduleSection":{
+        "title":"Schedule",
+        "day1":"Day 1 (Open Event) - Wednesday, April 10th",
+        "day1_item1":"19:30 Welcome Cocktail (Restaurant on the premises of Bávaro Hotel)",
+        "day2":"Day 2 (Open Event) - Thursday, April 11th",
+        "day2_item1":"8:40 - 9:00 Participant Registration",
+        "day2_item2":"9:00 - 9:30 Welcome Remarks",
+        "day2_item3":"9:30 - 11:00 SESSION I: CONTEXT. Fiscal Challenges for Latin America and the Caribbean in the Face of Global Climate Emergency and the Role of Budget Areas.",
+        "day2_item4":"11:00 - 11:30 Coffee Break and Group Photo",
+        "day2_item5":"11:30 - 12:50 SESSION II: Transparency of Climate Public Policy - Progress in Identifying Climate Public Expenditure in Latin America and the Caribbean.",
+        "day2_item6":"13:00 - 14:15 Lunch",
+        "day2_item7":"14:30 - 15:50 SESSION III: Monitoring and Evaluation of Climate-Related Expenditure and its Potential to Contribute to Mitigating Climate Change",
+        "day2_item8":"15:50 - 16:20 Coffee Break",
+        "day2_item9":"16:20 - 18:00 SESSION IV: Use of Advanced Information Technology in Budgeting.",
+        "day2_item10":"18:00 CLOSING OF THE OPEN EVENT",
+        "day3":"Day 3 (Closed Session) - Friday, April 12th",
+        "day3_item1":"8:30 - 10:20 Technical Dialogue: Governance in Climate Action. Methodology for evaluation to enhance governance through the integration of Ministries of Finance in inter-ministerial climate action.",
+        "day3_item2":"10:20 - 10:30 Coffee Break",
+        "day3_item3":"10:30 - 11:30 Challenges and Work Plan for the Results-Based Budgeting Network for Latin America and the Caribbean for the period 2024-2025",
+        "day3_item4":"11:30 - 13:00 Next Steps, Election of the presidency of the Results-Based Budgeting Network for Latin America and the Caribbean for 2024-25, and Announcement of the date and venue for the next meeting.",
+        "day3_item5":"13:00 Closing of the Event"
+    }
+  }

@@ -8,7 +8,23 @@ import Image from 'next/image'
 import EventSchedule from './schedule-component'
 import Link from 'next/link'
 import FormSection from './form-section'
+import {useTranslations} from 'next-intl';
+
 const Landing = () => {
+    const t = useTranslations('Index');
+    const t2 = useTranslations('FormSection');
+
+    const form_texts =  {
+        stay_type_label: t2('stay_type_label'),
+        room_type_single: t2('room_type_single'),
+        room_type_double: t2('room_type_double'),
+        calendar_heading: t2('calendar_heading'),
+        calendar_description: t2('calendar_description'),
+        name_label: t2('name_label'),
+        name2_label: t2('name2_label'),
+        submit_label:t2('submit_label')
+       }
+
   return (
     <div className="bg-gray-100 min-h-screen">
         {/* Hero Section */}
@@ -16,20 +32,21 @@ const Landing = () => {
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap md:grid md:grid-cols-2 items-center justify-between gap-4">
                     <div className="w-full flex flex-col justify-start h-full">
-                        <h1 className="text-4xl font-bold mb-4">XXI Meeting of the Results-Based Budgeting Network for Latin America and the Caribbean</h1>
+                        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
                         <p className="text-gray-600 mb-8">
-                            Following the closure of the United Nations Climate Change Conference - COP 28, in December 2023 in Dubai, and in line with the agreements reached during the XX Meeting of the Results-Based Budgeting Network for Latin America and the Caribbean in May 2023 in Panama City, this twenty-first meeting of the Network aims to strengthen the exchange of experiences regarding strategies and specific challenges related to the governance and governmental management involved in implementing green budgeting. This serves as a tool to assess and drive improvements in aligning national expenditure and revenue processes with climate goals and other environmental objectives.
+                            {t('paragraph')}
                         </p>
                         <div className="bg-white flex items-center justify-center py-8 mb-8">
             <div className="text-gray-600 font-semibold ">2024</div>
                 <CalendarIcon size={64} className="text-gray-600 mr-2" />
-            <div className="text-gray-600 font-semibold">April 10th - April 12th</div>
+            <div className="text-gray-600 font-semibold">{t('date')}</div>
         </div>
                     </div>
                     <div className="flex flex-col w-full justify-center items-center ">
-                    <h2 className='font-bold text-xl md:text-3xl mb-4'>Book Your Stay</h2>
+                    <h2 className='font-bold text-xl md:text-3xl mb-4'>{t('form_title')}</h2>
                         <div className='border-2 border-gray-300 rounded-md  p-4'>
-                            <FormSection/></div>
+                            <FormSection {...form_texts}/>
+                        </div>
                     </div>
                 </div>
             </div>    
