@@ -2,10 +2,12 @@ import React from "react";
 import Image from "next/image";
 import LogosRow from "@/public/images/xxi.png";
 import FormSection from "./form-section";
-import { Button } from "./ui/button";
 import EventSchedule from "./schedule-component";
 import {useTranslations} from 'next-intl';
 import CounterComponent from "./date-counter";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Globe } from "lucide-react";
+import Link from "next/link";
 
 const Landing = () => {
 
@@ -26,6 +28,15 @@ const Landing = () => {
   return (
     <>
       <div className="flex items-center justify-center mt-4 mb-4">
+        <Popover>
+          <PopoverTrigger>
+            <Globe/> en/es
+          </PopoverTrigger>
+          <PopoverContent>
+            <Link href={"/en"} className="hover:underline block ">English</Link>
+            <Link href={"/es"} className="hover:underline block ">Espanol</Link>
+          </PopoverContent>
+        </Popover>
         <Image src={LogosRow} width={1200} alt=""></Image>
       </div>
       <div className="h-10" style={{ background: "#B3B5B6" }}></div>

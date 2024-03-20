@@ -2,12 +2,6 @@
 import React from 'react'
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-type TimeLeft = {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-};
 const calculateTimeLeft = (targetDateTimestamp: any) => {
     const nowTimestamp = new Date().getTime();
     const differenceInSeconds = Math.max(
@@ -24,7 +18,6 @@ const calculateTimeLeft = (targetDateTimestamp: any) => {
   };
 
 const CounterComponent = () => {
-    
     const targetDate = "2024-04-10T00:00:00Z";
     const targetDateTimestamp = React.useMemo(() => new Date(targetDate).getTime(), []);
   
@@ -116,4 +109,4 @@ const CounterComponent = () => {
   )
 }
 
-export default CounterComponent
+export default CounterComponent 
