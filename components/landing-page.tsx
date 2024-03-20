@@ -1,69 +1,67 @@
-import React from 'react'
-import { CalendarIcon} from 'lucide-react'
-import coplac_logo from "@/public/coplac_logo.png"
-import idb_logo from  "@/public/IDB.svg"
-import minprep_logo from  "@/public/minprep_logo.png"
-import minhac_logo from "@/public/minhac_logo.png"
-import Image from 'next/image'
-import EventSchedule from './schedule-component'
-import Link from 'next/link'
-import FormSection from './form-section'
+import React from "react";
+import Image from "next/image";
+import LogosRow from "@/public/images/xxi.png";
+import FormSection from "./form-section";
+import { Button } from "./ui/button";
+import EventSchedule from "./schedule-component";
 import {useTranslations} from 'next-intl';
+import CounterComponent from "./date-counter";
 
 const Landing = () => {
-    const t = useTranslations('Index');
-    const t2 = useTranslations('FormSection');
 
-    const form_texts =  {
-        stay_type_label: t2('stay_type_label'),
-        room_type_single: t2('room_type_single'),
-        room_type_double: t2('room_type_double'),
-        calendar_heading: t2('calendar_heading'),
-        calendar_description: t2('calendar_description'),
-        name_label: t2('name_label'),
-        name2_label: t2('name2_label'),
-        submit_label:t2('submit_label')
-       }
+  const t = useTranslations("Index");
+  const t2 = useTranslations("FormSection");
+
+  const form_texts = {
+    stay_type_label: t2("stay_type_label"),
+    room_type_single: t2("room_type_single"),
+    room_type_double: t2("room_type_double"),
+    calendar_heading: t2("calendar_heading"),
+    calendar_description: t2("calendar_description"),
+    name_label: t2("name_label"),
+    name2_label: t2("name2_label"),
+    submit_label: t2("submit_label"),
+  };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-        {/* Hero Section */}
-        <section className="bg-white py-20">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-wrap md:grid md:grid-cols-2 items-center justify-between gap-4">
-                    <div className="w-full flex flex-col justify-start h-full">
-                        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-                        <p className="text-gray-600 mb-8">
-                            {t('paragraph')}
-                        </p>
-                        <div className="bg-white flex items-center justify-center py-8 mb-8">
-            <div className="text-gray-600 font-semibold ">2024</div>
-                <CalendarIcon size={64} className="text-gray-600 mr-2" />
-            <div className="text-gray-600 font-semibold">{t('date')}</div>
+    <>
+      <div className="flex items-center justify-center mt-4 mb-4">
+        <Image src={LogosRow} width={1200} alt=""></Image>
+      </div>
+      <div className="h-10" style={{ background: "#B3B5B6" }}></div>
+      <section
+        className="justify-center min-h-screen bg-cover bg-center relative py-8"
+        style={{
+          backgroundImage: `url('https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative z-10">
+          <h1 className="text-3xl md:text-5xl lg:text-8xl text-center font-bold mb-10 px-12 md:px-48 text-white">
+            {t("title")}
+          </h1>
+          <div className=" flex flex-row items-center justify-around mx-auto text-center text-sm md:text-lg px-8 md:px-48 text-gray-100">
+            {t("paragraph")}
+          </div>
+          <div className="flex items-center justify-center mt-20"></div>
         </div>
-                    </div>
-                    <div className="flex flex-col w-full justify-center items-center ">
-                    <h2 className='font-bold text-xl md:text-3xl mb-4'>{t('form_title')}</h2>
-                        <div className='border-2 border-gray-300 rounded-md  p-4'>
-                            <FormSection {...form_texts}/>
-                        </div>
-                    </div>
-                </div>
-            </div>    
+        <section className="flex flex-col-reverse md:grid md:grid-cols-2 justify-between mx-4 md:mx-auto max-w-7xl z-50 relative bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex-1 p-10 pt-20">
+            <EventSchedule />
+          </div>
+          
+          <div className="flex-1 py-10 rounded-md px-10">
+            <FormSection {...form_texts} />
+          </div>
         </section>
-        <div className=" flex flex-row items-center justify-around mx-auto max-w-7xl ">
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minprep_logo} alt="Ministerio de Presupuestos Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minhac_logo} alt="Ministerio de Hacienda Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={idb_logo} alt="IDB Logo"  objectFit="contain" className='mx-auto'/></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={coplac_logo} alt="COPLAC Logo"  objectFit="contain" /></div>
+        <div className="flex justify-center bg-cover bg-center relative gap-4 pb-20 pt-20">
+          <CounterComponent />
         </div>
-       
-        <hr className='py-10'/>
-        <div className="container mx-auto px-4 min-h-screen">
-            <EventSchedule/>
-        </div>
-    </div>
-  )
-}
+      </section>
 
-export default Landing
+      {/* Aquí puedes continuar con el resto de tu componente */}
+    </>
+  );
+};
+
+export default Landing;
