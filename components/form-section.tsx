@@ -23,6 +23,10 @@ import { DatePickerWithRange } from './date-picker-with-range'
 import { addDays} from "date-fns"
 import {isDateInRange} from "../lib/utils"
 import { createReservation } from '@/lib/actions'
+<<<<<<< HEAD
+=======
+
+>>>>>>> a39b642bb6130035ff5bcdc8992e55f5bebb2458
 
   const FormSchema = z.object({
     stay_type: z.enum(["single", "double"]),
@@ -59,17 +63,7 @@ import { createReservation } from '@/lib/actions'
     path: ["name2"], // Specify the path of the error
    });
 
-   type FormTexts = {
-    stay_type_label: string
-    room_type_single: string
-    room_type_double: string
-    calendar_heading: string
-    calendar_description: string
-    name_label: string
-    name2_label: string
-    submit_label:string
-   }
-const FormSection = ({stay_type_label, room_type_single, room_type_double, calendar_heading, calendar_description, name_label, name2_label, submit_label}:FormTexts) => {
+const FormSection = () => {
    const [submitted, setSubmitted] = useState({sent:false, error:false, message:""});
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -121,7 +115,7 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
             name="stay_type"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{stay_type_label}</FormLabel>
+                <FormLabel>Stay Type</FormLabel>
                 <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -133,7 +127,7 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
                       <RadioGroupItem value="single" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                      {room_type_single}
+                      Single Bed Room
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
@@ -141,7 +135,7 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
                       <RadioGroupItem value="double" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                        {room_type_double}
+                        Double Bed Room
                     </FormLabel>
                   </FormItem>
                 </RadioGroup>
@@ -154,10 +148,10 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
             name="date"
             render={({ field }) => (
               <FormItem className='mx-auto w-full'>
-                <FormLabel>{calendar_heading}</FormLabel>
+                <FormLabel>Date</FormLabel>
                 <DatePickerWithRange field = {field}/>
                 <FormDescription>
-                  {calendar_description}
+                  Select a minimum of 3 days including at least one day between April 10th to April 13th 2024, feel free to extend your stay.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -179,7 +173,7 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{name_label}</FormLabel>
+                <FormLabel>Name</FormLabel>
                 <Input type="text" {...field} />
                 <FormMessage />
               </FormItem>
@@ -191,14 +185,14 @@ const FormSection = ({stay_type_label, room_type_single, room_type_double, calen
               name="name2"
               render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{name2_label}</FormLabel>
+                    <FormLabel>Second Person&rsquo;s Name</FormLabel>
                     <Input type="text" {...field} />
                     <FormMessage />
                   </FormItem>
               )}
               />
           )}
-          <Button type="submit">{submit_label}</Button>
+          <Button type="submit">Submit</Button>
         </form>
       </Form>
       <Toaster/>
