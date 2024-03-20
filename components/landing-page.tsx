@@ -1,69 +1,178 @@
-import React from 'react'
-import { CalendarIcon} from 'lucide-react'
-import coplac_logo from "@/public/coplac_logo.png"
-import idb_logo from  "@/public/IDB.svg"
-import minprep_logo from  "@/public/minprep_logo.png"
-import minhac_logo from "@/public/minhac_logo.png"
-import Image from 'next/image'
-import EventSchedule from './schedule-component'
-import Link from 'next/link'
-import FormSection from './form-section'
-import {useTranslations} from 'next-intl';
+"use client";
+import React, { useMemo } from "react";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import Image from "next/image";
+import todoIncluidoLogo from "@/public/images/xxi.png";
+import FormSection from "./form-section";
+import { Button } from "./ui/button";
+import EventSchedule from "./schedule-component";
+
+const calculateTimeLeft = (targetDateTimestamp: any) => {
+  const nowTimestamp = new Date().getTime();
+  const differenceInSeconds = Math.max(
+    (targetDateTimestamp - nowTimestamp) / 1000,
+    0
+  );
+
+  const days = Math.floor(differenceInSeconds / (3600 * 24));
+  const hours = Math.floor((differenceInSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((differenceInSeconds % 3600) / 60);
+  const seconds = Math.floor(differenceInSeconds % 60);
+
+  return { days, hours, minutes, seconds };
+};
 
 const Landing = () => {
-    const t = useTranslations('Index');
-    const t2 = useTranslations('FormSection');
+  const targetDate = "2024-04-10T00:00:00Z";
+  const targetDateTimestamp = useMemo(() => new Date(targetDate).getTime(), []);
 
-    const form_texts =  {
-        stay_type_label: t2('stay_type_label'),
-        room_type_single: t2('room_type_single'),
-        room_type_double: t2('room_type_double'),
-        calendar_heading: t2('calendar_heading'),
-        calendar_description: t2('calendar_description'),
-        name_label: t2('name_label'),
-        name2_label: t2('name2_label'),
-        submit_label:t2('submit_label')
-       }
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(forceUpdate, 1000);
+    return () => clearInterval(intervalId);
+  }, [forceUpdate]);
+
+  const timeLeft = calculateTimeLeft(targetDateTimestamp);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-        {/* Hero Section */}
-        <section className="bg-white py-20">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-wrap md:grid md:grid-cols-2 items-center justify-between gap-4">
-                    <div className="w-full flex flex-col justify-start h-full">
-                        <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-                        <p className="text-gray-600 mb-8">
-                            {t('paragraph')}
-                        </p>
-                        <div className="bg-white flex items-center justify-center py-8 mb-8">
-            <div className="text-gray-600 font-semibold ">2024</div>
-                <CalendarIcon size={64} className="text-gray-600 mr-2" />
-            <div className="text-gray-600 font-semibold">{t('date')}</div>
+    <>
+      <div className="flex items-center justify-center mt-4 mb-4">
+        <Image src={todoIncluidoLogo} width={1200} alt=""></Image>
+      </div>
+      <div className="h-10" style={{ background: "#B3B5B6" }}></div>
+      <section
+        className="justify-center min-h-screen bg-cover bg-center relative py-8"
+        style={{
+          backgroundImage: `url('https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="relative z-10">
+          {" "}
+          {/* Asegura que este div esté por encima del overlay */}
+          <h3 className="text-center  font-medium text-gray-200 text-xl pt-32 mb-10">
+            XXI Meeting of the Results-Based Budgeting Network for Latin America
+            and the Caribbean
+          </h3>
+          <h1 className="text-8xl text-center font-bold mb-10 px-48 text-white">
+            Welcome to our XXI Meeting for Latin America and the Caribbean
+          </h1>
+          <div className=" flex flex-row items-center justify-around mx-auto text-center px-48 text-gray-100">
+            Following the closure of the United Nations Climate Change
+            Conference - COP 28, in December 2023 in Dubai, and in line with the
+            agreements reached during the XX Meeting of the Results-Based
+            Budgeting Network for Latin America and the Caribbean in May 2023 in
+            Panama City, this twenty-first meeting of the Network aims to
+            strengthen the exchange of experiences regarding strategies and
+            specific challenges related to the governance and governmental
+            management involved in implementing green budgeting. This serves as
+            a tool to assess and drive improvements in aligning national
+            expenditure and revenue processes with climate goals and other
+            environmental objectives.
+          </div>
+          <div className="flex items-center justify-center mb-20 mt-20">
+            <Button
+              size="lg"
+              className="px-20 text-2xl py-10 bg-white hover:bg-gray-300 text-black"
+            >
+              Book today
+            </Button>
+          </div>
         </div>
-                    </div>
-                    <div className="flex flex-col w-full justify-center items-center ">
-                    <h2 className='font-bold text-xl md:text-3xl mb-4'>{t('form_title')}</h2>
-                        <div className='border-2 border-gray-300 rounded-md  p-4'>
-                            <FormSection {...form_texts}/>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </section>
-        <div className=" flex flex-row items-center justify-around mx-auto max-w-7xl ">
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minprep_logo} alt="Ministerio de Presupuestos Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minhac_logo} alt="Ministerio de Hacienda Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={idb_logo} alt="IDB Logo"  objectFit="contain" className='mx-auto'/></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={coplac_logo} alt="COPLAC Logo"  objectFit="contain" /></div>
-        </div>
-       
-        <hr className='py-10'/>
-        <div className="container mx-auto px-4 min-h-screen">
-            <EventSchedule/>
-        </div>
-    </div>
-  )
-}
+        <section className="flex flex-row justify-between mx-auto max-w-7xl z-50 relative bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex-1 p-10 pt-20">
+            <EventSchedule />
+          </div>
 
-export default Landing
+          <div className="flex-1 py-10 rounded-md px-10">
+            <FormSection />
+          </div>
+        </section>
+        <div className="flex justify-center bg-cover bg-center relative gap-4 pb-20 pt-20">
+          <section className="relative flex justify-center gap-4 ">
+            <div className="flex flex-row gap-4 justify-center items-center">
+              <CountdownCircleTimer
+                isPlaying
+                duration={timeLeft.days * 86400} // Total de segundos en los días restantes
+                initialRemainingTime={timeLeft.days * 86400}
+                colors={["#9dfc03", "#F7B801", "#A30000", "#A30000"]}
+                colorsTime={[7, 5, 2, 0]}
+              >
+                {({ remainingTime }) => (
+                  <div className="text-center text-white text-2xl font-bold">
+                    {Math.floor(remainingTime / 86400)}
+                    <br />
+                    Days
+                  </div>
+                )}
+              </CountdownCircleTimer>
+
+              {/* Horas */}
+              <CountdownCircleTimer
+                isPlaying
+                duration={24 * 3600} // Total de segundos en un día
+                initialRemainingTime={
+                  timeLeft.hours * 3600 +
+                  timeLeft.minutes * 60 +
+                  timeLeft.seconds
+                }
+                colors={["#ff2a00", "#F7B801", "#A30000", "#A30000"]}
+                colorsTime={[7, 5, 2, 0]}
+              >
+                {({ remainingTime }) => (
+                  <div className="text-center text-white text-2xl font-bold">
+                    {Math.floor((remainingTime % 86400) / 3600)}
+                    <br />
+                    Hours
+                  </div>
+                )}
+              </CountdownCircleTimer>
+
+              {/* Minutos */}
+              <CountdownCircleTimer
+                isPlaying
+                duration={3600} // Total de segundos en una hora
+                initialRemainingTime={timeLeft.minutes * 60 + timeLeft.seconds}
+                colors={["#ff00d4", "#F7B801", "#A30000", "#A30000"]}
+                colorsTime={[7, 5, 2, 0]}
+              >
+                {({ remainingTime }) => (
+                  <div className="text-center text-white text-2xl font-bold">
+                    {Math.floor((remainingTime % 3600) / 60)}
+                    <br />
+                    Minutes
+                  </div>
+                )}
+              </CountdownCircleTimer>
+
+              {/* Segundos */}
+              <CountdownCircleTimer
+                isPlaying
+                duration={60} // Total de segundos en un minuto
+                initialRemainingTime={timeLeft.seconds}
+                colors={["#00ffe1", "#F7B801", "#A30000", "#A30000"]}
+                colorsTime={[7, 5, 2, 0]}
+                onComplete={() => ({ shouldRepeat: true, delay: 1 })} // Ajuste conforme a la nueva documentación
+              >
+                {({ remainingTime }) => (
+                  <div className="text-center text-white text-2xl font-bold">
+                    {remainingTime}
+                    <br />
+                    Seconds
+                  </div>
+                )}
+              </CountdownCircleTimer>
+            </div>
+          </section>
+          {/* Días */}
+        </div>
+      </section>
+
+      {/* Aquí puedes continuar con el resto de tu componente */}
+    </>
+  );
+};
+
+export default Landing;
