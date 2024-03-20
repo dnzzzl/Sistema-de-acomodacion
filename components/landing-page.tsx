@@ -8,19 +8,20 @@ import {useTranslations} from 'next-intl';
 import CounterComponent from "./date-counter";
 
 const Landing = () => {
-    const t = useTranslations('Index');
-    const t2 = useTranslations('FormSection');
 
-    const form_texts =  {
-        stay_type_label: t2('stay_type_label'),
-        room_type_single: t2('room_type_single'),
-        room_type_double: t2('room_type_double'),
-        calendar_heading: t2('calendar_heading'),
-        calendar_description: t2('calendar_description'),
-        name_label: t2('name_label'),
-        name2_label: t2('name2_label'),
-        submit_label:t2('submit_label')
-       }
+  const t = useTranslations("Index");
+  const t2 = useTranslations("FormSection");
+
+  const form_texts = {
+    stay_type_label: t2("stay_type_label"),
+    room_type_single: t2("room_type_single"),
+    room_type_double: t2("room_type_double"),
+    calendar_heading: t2("calendar_heading"),
+    calendar_description: t2("calendar_description"),
+    name_label: t2("name_label"),
+    name2_label: t2("name2_label"),
+    submit_label: t2("submit_label"),
+  };
 
   return (
     <>
@@ -53,19 +54,14 @@ const Landing = () => {
             <FormSection {...form_texts} />
           </div>
         </section>
-        <div className=" flex flex-row items-center justify-around mx-auto max-w-7xl ">
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minprep_logo} alt="Ministerio de Presupuestos Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={minhac_logo} alt="Ministerio de Hacienda Logo"  objectFit="contain" /></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={idb_logo} alt="IDB Logo"  objectFit="contain" className='mx-auto'/></div>
-            <div className='max-w-64 flex-1 overflow-hidden'><Image src={coplac_logo} alt="COPLAC Logo"  objectFit="contain" /></div>
+        <div className="flex justify-center bg-cover bg-center relative gap-4 pb-20 pt-20">
+          <CounterComponent />
         </div>
-       
-        <hr className='py-10'/>
-        <div className="container mx-auto px-4 min-h-screen">
-            <EventSchedule/>
-        </div>
-    </div>
-  )
-}
+      </section>
 
-export default Landing
+      {/* Aquí puedes continuar con el resto de tu componente */}
+    </>
+  );
+};
+
+export default Landing;

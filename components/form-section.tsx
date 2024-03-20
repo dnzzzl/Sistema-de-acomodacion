@@ -23,10 +23,6 @@ import { DatePickerWithRange } from './date-picker-with-range'
 import { addDays} from "date-fns"
 import {isDateInRange} from "../lib/utils"
 import { createReservation } from '@/lib/actions'
-<<<<<<< HEAD
-=======
-
->>>>>>> a39b642bb6130035ff5bcdc8992e55f5bebb2458
 
   const FormSchema = z.object({
     stay_type: z.enum(["single", "double"]),
@@ -63,7 +59,17 @@ import { createReservation } from '@/lib/actions'
     path: ["name2"], // Specify the path of the error
    });
 
-const FormSection = () => {
+   type FormTexts = {
+    stay_type_label: string
+    room_type_single: string
+    room_type_double: string
+    calendar_heading: string
+    calendar_description: string
+    name_label: string
+    name2_label: string
+    submit_label:string
+   }
+const FormSection = ({stay_type_label, room_type_single, room_type_double, calendar_heading, calendar_description, name_label, name2_label, submit_label}:FormTexts) => {
    const [submitted, setSubmitted] = useState({sent:false, error:false, message:""});
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -115,7 +121,7 @@ const FormSection = () => {
             name="stay_type"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Stay Type</FormLabel>
+                <FormLabel>{stay_type_label}</FormLabel>
                 <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -127,7 +133,7 @@ const FormSection = () => {
                       <RadioGroupItem value="single" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                      Single Bed Room
+                      {room_type_single}
                     </FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
@@ -135,7 +141,7 @@ const FormSection = () => {
                       <RadioGroupItem value="double" />
                     </FormControl>
                     <FormLabel className="font-normal">
-                        Double Bed Room
+                        {room_type_double}
                     </FormLabel>
                   </FormItem>
                 </RadioGroup>
@@ -148,10 +154,10 @@ const FormSection = () => {
             name="date"
             render={({ field }) => (
               <FormItem className='mx-auto w-full'>
-                <FormLabel>Date</FormLabel>
+                <FormLabel>{calendar_heading}</FormLabel>
                 <DatePickerWithRange field = {field}/>
                 <FormDescription>
-                  Select a minimum of 3 days including at least one day between April 10th to April 13th 2024, feel free to extend your stay.
+                  {calendar_description}
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -173,7 +179,7 @@ const FormSection = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{name_label}</FormLabel>
                 <Input type="text" {...field} />
                 <FormMessage />
               </FormItem>
@@ -185,14 +191,14 @@ const FormSection = () => {
               name="name2"
               render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Second Person&rsquo;s Name</FormLabel>
+                    <FormLabel>{name2_label}</FormLabel>
                     <Input type="text" {...field} />
                     <FormMessage />
                   </FormItem>
               )}
               />
           )}
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{submit_label}</Button>
         </form>
       </Form>
       <Toaster/>
