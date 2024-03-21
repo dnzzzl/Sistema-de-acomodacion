@@ -29,7 +29,7 @@ const Landing = () => {
     <>
       <div className="flex items-center justify-center mt-4 mb-4">
         <Popover>
-          <PopoverTrigger>
+          <PopoverTrigger className="relative left-10 md:block">
             <Globe/> en/es
           </PopoverTrigger>
           <PopoverContent>

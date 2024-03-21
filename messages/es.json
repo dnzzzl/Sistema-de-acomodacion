@@ -1,13 +1,13 @@
 {
     "Index": {
-        "title": "Vigesima Primera Reunión de la Red de Presupuesto por Resultados de América Latina y el Caribe",
-        "paragraph":"Tras el cierre de la Conferencia de las Naciones Unidas sobre el Cambio Climático - COP 28, de diciembre de 2023 en Dubái, y en coherencia con los acuerdos alcanzados en la XX Reunión de la Red de Presupuesto por Resultados de América Latina y el Caribe, de mayo del 2023 en Ciudad de Panamá, para esta vigésima-primera reunión de la Red se busca reforzar el intercambio de experiencias respecto a las estrategias y los desafíos concretos para la gobernanza y la gestión gubernamental que supone poner en práctica una presupuestación verde, como instrumento de respuesta para evaluar e impulsar mejoras en la adecuación de los procesos nacionales de gasto en ingresos a los objetivos climáticos y otros objetivos medioambientales.",
+        "title": "Vigésima Primera Reunión de la Red de Presupuesto por Resultados de América Latina y el Caribe",
+        "paragraph":"Tras el cierre de la Conferencia de las Naciones Unidas sobre el Cambio Climático - COP 28, de diciembre de 2023 en Dubai, y en coherencia con los acuerdos alcanzados en la XX Reunión de la Red de Presupuesto por Resultados de América Latina y el Caribe, de mayo del 2023 en Ciudad de Panamá, para esta vigésima-primera reunión de la Red se busca reforzar el intercambio de experiencias respecto a las estrategias y los desafíos concretos para la gobernanza y la gestión gubernamental que supone poner en práctica una presupuestación verde, como instrumento de respuesta para evaluar e impulsar mejoras en la adecuación de los procesos nacionales de gasto en ingresos a los objetivos climáticos y otros objetivos medioambientales.",
         "date":"10 de abril - 12 de abril",
         "form_title":"Reserva Tu Estadía"
     },
     "FormSection": {
         "stay_type_label":"Tipo De Estadía",
-        "room_type_single":"Cuarto Single",
+        "room_type_single":"Cuarto Único",
         "room_type_double":"Cuarto Doble",
         "calendar_heading":"Fecha",
         "calendar_description":"Selecciona al menos 3 días, incluyendo al menos un día entre 10 de abril y 13 de abril 2024, puedes extender tu estadia.",
@@ -20,21 +20,21 @@
         "day1":"Dia 1 (Apertura de Evento) - Miercoles, 10 de abril",
         "day1_item1":"19:30 Cocktel de Bienvenida (En el restaurante de Bávaro Hotel)",
         "day2":"Dia 2 (Evento Abierto) - Jueves, 11 de abril",
-        "day2_item1":"8:40 - 9:00 Registro de Participantes",
-        "day2_item2":"9:00 - 9:30 Bienvenida",
-        "day2_item3":"9:30 - 11:00 SESION I: CONTEXTO. Desafíos fiscales para Latínamerica y el Caribe en la cara de la emergencia global del cambio climatico y el rol de las aportaciones presupuestarias ",
-        "day2_item4":"11:00 - 11:30 Pausa para cafe y Fotografía Grupal ",
-        "day2_item5":"11:30 - 12:50 SES ION II: Transparencia de la Politica Climatica - Progreso en la Identificación de Gasto Climático en Latínamerica y el Caribe. ", 
-        "day2_item6":"13:00 - 14:15 Almuerzo",
-        "day2_item7":"14:30 - 15:50 SESION III: Monitoreo y Evaluación de Gasto Climático y su Potencial para Contribuir al Mitigación del Cambio Climatico",
-        "day2_item8":"15:50 - 16:20 Pausa para cafe",
-        "day2_item9":"16:20 - 18:00 SESION IV: Uso de tecnologías de la Informacion avanzada en Presupuestación.",
-        "day2_item10":"18:00 Cierre del evento Abierto",
+        "day2_item1":"8:30 - 8:50 Registro de Participantes",
+        "day2_item2":"8:50 - 9:20 Bienvenida",
+        "day2_item3":"9:20 - 10:40 SESION I: CONTEXTO. Desafíos fiscales para Latínamerica y el Caribe en la cara de la emergencia global del cambio climatico y el rol de las aportaciones presupuestarias ",
+        "day2_item4":"10:40 - 11:10 Pausa para cafe y Fotografía Grupal ",
+        "day2_item5":"11:10 - 12:40 SESION II: Transparencia de la Politica Climatica - Progreso en la Identificación de Gasto Climático en Latínamerica y el Caribe. ", 
+        "day2_item6":"12:40 - 14:00 Almuerzo",
+        "day2_item7":"14:00 - 15:20 SESION III: Monitoreo y Evaluación de Gasto Climático y su Potencial para Contribuir al Mitigación del Cambio Climatico",
+        "day2_item8":"15:20 - 15:40 Pausa para cafe",
+        "day2_item9":"15:40 - 17:00 SESION IV: Uso de tecnologías de la Informacion avanzada en Presupuestación.",
+        "day2_item10":"17:00 - 17:20 Cierre del evento Abierto",
         "day3":"Dia 3 (Sesion Cerrada) - Viernes, 12 de abril",
-        "day3_item1":"8:30 - 10:20 Dialogo Tecnico: Gobernanza en la Accion Climatica. Metodología para la evaluacion para mejorar la gobernanza a traves de la integracion de ministerios de Finanzas en la accion climatica interministerial. ",
-        "day3_item2":"10:20 - 10:30 Pausa para cafe",
-        "day3_item3":"10:30 - 11:30 Desafíos y Plan de Trabajo para la Red de presupuestación para Latínamerica y el Caribe para el periodo 2024-2025",
-        "day3_item4":"11:30 - 13:00 Siguiente Paso, Elección de la presidencia de la Red de presupuestación para Latínamerica y el Caribe para 2024-25, y Anuncio de la fecha y lugar del proximo evento.",
-        "day3_item5":"13:00 Cierre del Evento"
+        "day3_item1":"9:00 - 10:00 Dialogo Tecnico: Gobernanza en la Accion Climatica. Metodología para la evaluacion para mejorar la gobernanza a traves de la integracion de ministerios de Finanzas en la accion climatica interministerial. ",
+        "day3_item2":"10:00 - 10:20 Pausa para cafe",
+        "day3_item3":"10:20 - 11:30 Desafíos y Plan de Trabajo para la Red de presupuestación para Latínamerica y el Caribe para el periodo 2024-2025",
+        "day3_item4":"11:30 - 12:30 Siguiente Paso, Elección de la presidencia de la Red de presupuestación para Latínamerica y el Caribe para 2024-25, y Anuncio de la fecha y lugar del proximo evento.",
+        "day3_item5":"12:30 Cierre del Evento"
     }
   }
