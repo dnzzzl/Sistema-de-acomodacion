@@ -18,9 +18,9 @@
 
     "ScheduleSection":{
         "title":"Schedule",
-        "day1":"Day 1 (Open Event) - Wednesday, April 10th",
-        "day1_item1":"19:30 Welcome Cocktail (Restaurant on the premises of Bávaro Hotel)",
-        "day2":"Day 2 (Open Event) - Thursday, April 11th",
+        "day1":"Day 1: Casual Open Event at Bar Higuey - Wednesday, April 10th",
+        "day1_item1":"19:30 Welcome Cocktail at Bar Higuey",
+        "day2":"Day 2: Business Casual Open Event at Salón Santo Domingo - Thursday, April 11th",
         "day2_item1":"8:30 - 8:50 Participant Registration",
         "day2_item2":"8:50 - 9:20 Welcome Remarks",
         "day2_item3":"9:20 - 10:40 SESSION I: CONTEXT. Fiscal Challenges for Latin America and the Caribbean in the Face of Global Climate Emergency and the Role of Budget Areas.",
@@ -31,7 +31,7 @@
         "day2_item8":"15:20 - 15:40 Coffee Break",
         "day2_item9":"15:40 - 17:00 SESSION IV: Use of Advanced Information Technology in Budgeting.",
         "day2_item10":"17:00 - 17:20 CLOSING OF THE OPEN EVENT",
-        "day3":"Day 3 (Closed Session) - Friday, April 12th",
+        "day3":"Day 3 Business Casual Closed Event at Salón Santo Domingo - Friday, April 12th",
         "day3_item1":"9:00 - 10:00 Technical Dialogue: Governance in Climate Action. Methodology for evaluation to enhance governance through the integration of Ministries of Finance in inter-ministerial climate action.",
         "day3_item2":"10:00 - 10:20 Coffee Break",
         "day3_item3":"10:20 - 11:30 Challenges and Work Plan for the Results-Based Budgeting Network for Latin America and the Caribbean for the period 2024-2025",
