@@ -26,11 +26,11 @@ const SimpleLogosHeader = () => {
           </PopoverContent>
         </Popover>
         
-        <div className=' flex-1 overflow-hidden'><Image src={minprep_logo} alt="Ministerio de Presupuestos Logo"  objectFit="contain" /></div>
-        <div className=' flex-1 overflow-hidden'>
-            {currentLocale == "es" ? <Image src={idb_logo_es} alt="IDB Logo"  objectFit="contain" className='mx-auto'/>:<Image src={idb_logo_en} alt="IDB Logo"  objectFit="contain" className='mx-auto'/>}
+        <div className=' flex-1 overflow-hidden'><Image src={minprep_logo} alt="Ministerio de Presupuestos Logo"  /></div>
+        <div className=' flex-1 overflow-hidden scale-75'>
+            {currentLocale == "es" ? <Image src={idb_logo_es} alt="IDB Logo"  className='mx-auto'/>:<Image src={idb_logo_en} alt="IDB Logo"  objectFit="contain" className='mx-auto'/>}
         </div>
-        <div className=' flex-1 overflow-hidden'><Image src={coplac_logo} alt="COPLAC Logo"  objectFit="contain" /></div>
+        <div className=' flex-1 overflow-hidden'><Image src={coplac_logo} alt="COPLAC Logo"  /></div>
     </div>
   )
 }
